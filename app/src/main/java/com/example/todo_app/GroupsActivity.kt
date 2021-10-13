@@ -1,5 +1,6 @@
 package com.example.todo_app
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.InputType
@@ -61,7 +62,8 @@ class GroupsActivity : AppCompatActivity(), OnGroupClickListener {
     }
 
     override fun groupClicked(index: Int) {
-        TODO("Not yet implemented")
+        val intent = Intent(this, ItemsActivity::class.java)
+        startActivity(intent)
     }
 
     override fun groupLongClicked(index: Int) {
