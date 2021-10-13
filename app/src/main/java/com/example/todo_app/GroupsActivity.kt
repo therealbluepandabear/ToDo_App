@@ -28,34 +28,3 @@ class GroupsActivity : AppCompatActivity() {
         setContentView(binding.root)
     }
 }
-
-class GroupsViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
-    RecyclerView.ViewHolder(inflater.inflate(
-        R.layout.group_row,
-        parent,
-        false)) {
-    private var groupNameTextView: TextView = itemView.findViewById(R.id.groupNameTextView)
-    private var groupCountTextView: TextView = itemView.findViewById(R.id.groupCountTextView)
-
-    fun bind(group: Group) {
-        groupNameTextView.text = group.name
-        groupCountTextView.text = "${group.items.count()} items"
-    }
-}
-
-class GroupsAdapter(private val list: List<Group>) : RecyclerView.Adapter<GroupsViewHolder>() {
-    override fun onCreateViewHolder(parent: ViewGroup,
-                                    viewType: Int): GroupsViewHolder {
-        val inflater = LayoutInflater.from(parent.context)
-        return GroupsViewHolder(inflater, parent)
-    }
-
-    override fun onBindViewHolder(holder: GroupsViewHolder,
-                                  position: Int) {
-        val group = list[position]
-        holder.bind(group)
-    }
-
-    override fun getItemCount() = list.size
-
-}
