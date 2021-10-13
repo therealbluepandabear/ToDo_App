@@ -17,6 +17,9 @@ class GroupsActivity : AppCompatActivity() {
         setBindings()
 
         binding.groupsRecyclerView.layoutManager = LinearLayoutManager(this)
+
+        val groupsAdapter = GroupsAdapter(AppData.groups)
+        binding.groupsRecyclerView.adapter = groupsAdapter
     }
     private fun setBindings() {
         binding = GroupsBinding.inflate(layoutInflater)
@@ -32,7 +35,7 @@ class GroupsViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
 
 }
 
-class GroupsAdapter : RecyclerView.Adapter<GroupsViewHolder>() {
+class GroupsAdapter(private val list: List<Group>) : RecyclerView.Adapter<GroupsViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GroupsViewHolder {
         TODO("Not yet implemented")
     }
