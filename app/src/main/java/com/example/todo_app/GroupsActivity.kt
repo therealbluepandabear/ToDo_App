@@ -19,6 +19,7 @@ class GroupsActivity : AppCompatActivity() {
 
         binding.groupsRecyclerView.layoutManager = LinearLayoutManager(this)
 
+        AppData.initialize()
         val groupsAdapter = GroupsAdapter(AppData.groups)
         binding.groupsRecyclerView.adapter = groupsAdapter
     }
