@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.todo_app.databinding.GroupsBinding
 
-class GroupsActivity : AppCompatActivity() {
+class GroupsActivity : AppCompatActivity(), OnGroupClickListener {
     private lateinit var binding: GroupsBinding
 
     var groupsAdapter: GroupsAdapter? = null
@@ -26,7 +26,7 @@ class GroupsActivity : AppCompatActivity() {
         binding.groupsRecyclerView.layoutManager = LinearLayoutManager(this)
 
         AppData.initialize()
-        groupsAdapter = GroupsAdapter(AppData.groups)
+        groupsAdapter = GroupsAdapter(AppData.groups, this)
         binding.groupsRecyclerView.adapter = groupsAdapter
     }
     private fun setBindings() {
@@ -58,5 +58,13 @@ class GroupsActivity : AppCompatActivity() {
 
         val dialog: AlertDialog = builder.create()
         dialog.show()
+    }
+
+    override fun groupClicked(index: Int) {
+        TODO("Not yet implemented")
+    }
+
+    override fun groupLongClicked(index: Int) {
+        TODO("Not yet implemented")
     }
 }
