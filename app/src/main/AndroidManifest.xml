@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ToDo_App">
         <activity
+            android:name=".ItemsActivity"
+            android:exported="true" />
+        <activity
             android:name=".GroupsActivity"
             android:exported="true">
             <intent-filter>
