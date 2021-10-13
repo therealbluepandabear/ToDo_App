@@ -3,6 +3,7 @@ package com.example.todo_app
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -26,5 +27,9 @@ class GroupsActivity : AppCompatActivity() {
     private fun setBindings() {
         binding = GroupsBinding.inflate(layoutInflater)
         setContentView(binding.root)
+    }
+
+    fun createNewGroup(v: View) {
+
     }
 }
