@@ -22,6 +22,9 @@ class ItemsActivity : AppCompatActivity() {
         supportActionBar!!.setDisplayShowTitleEnabled(false)
 
         binding.itemsRecyclerView.layoutManager = LinearLayoutManager(this)
+
+        var itemsAdapter = ItemsAdapter(thisGroup)
+        binding.itemsRecyclerView.adapter = itemsAdapter
     }
 
     override fun onSupportNavigateUp(): Boolean {
