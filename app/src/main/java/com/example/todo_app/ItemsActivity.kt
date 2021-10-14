@@ -15,7 +15,17 @@ class ItemsActivity : AppCompatActivity() {
         var thisGroup = AppData.groups[selectedIndex]
 
         binding.toolbarTitle.text = thisGroup.name
+
+        setSupportActionBar(binding.toolbar)
+        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+        supportActionBar!!.setDisplayShowTitleEnabled(false)
     }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
+    }
+
     private fun setBindings() {
         binding = ItemsBinding.inflate(layoutInflater)
         setContentView(binding.root)
