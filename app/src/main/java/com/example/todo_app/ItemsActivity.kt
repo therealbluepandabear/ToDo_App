@@ -13,6 +13,8 @@ class ItemsActivity : AppCompatActivity() {
 
         var selectedIndex = intent.getIntExtra("groupIndex", 0)
         var thisGroup = AppData.groups[selectedIndex]
+
+        binding.toolbarTitle.text = thisGroup.name
     }
     private fun setBindings() {
         binding = ItemsBinding.inflate(layoutInflater)
