@@ -10,6 +10,9 @@ class ItemsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setBindings()
+
+        var selectedIndex = intent.getIntExtra("groupIndex", 0)
+        var thisGroup = AppData.groups[selectedIndex]
     }
     private fun setBindings() {
         binding = ItemsBinding.inflate(layoutInflater)
