@@ -21,8 +21,7 @@ class ItemsViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
             itemNameTextView.paintFlags = itemNameTextView.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
             itemView.setBackgroundColor(Color.LTGRAY)
         } else {
-            itemNameTextView.paintFlags = itemNameTextView.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG.inv()
-            itemView.setBackgroundColor(Color.LTGRAY)
+            itemNameTextView.paintFlags = itemNameTextView.paintFlags and Paint.STRIKE_THRU_TEXT_FLAG.inv()
             itemView.setBackgroundColor(Color.TRANSPARENT)
         }
     }
