@@ -2,6 +2,7 @@ package com.example.todo_app
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.todo_app.databinding.ItemsBinding
 
 class ItemsActivity : AppCompatActivity() {
@@ -19,6 +20,8 @@ class ItemsActivity : AppCompatActivity() {
         setSupportActionBar(binding.toolbar)
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.setDisplayShowTitleEnabled(false)
+
+        binding.itemsRecyclerView.layoutManager = LinearLayoutManager(this)
     }
 
     override fun onSupportNavigateUp(): Boolean {
