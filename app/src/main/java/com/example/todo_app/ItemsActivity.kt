@@ -1,8 +1,11 @@
 package com.example.todo_app
 
+import android.app.Activity
+import android.hardware.input.InputManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.KeyEvent
+import android.view.inputmethod.InputMethodManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.todo_app.databinding.ItemsBinding
 
@@ -36,6 +39,10 @@ class ItemsActivity : AppCompatActivity(), OnItemClickListener {
                     thisGroup.items .add(item)
                     itemsAdapter!!.notifyItemInserted(thisGroup.items.count())
                     binding.newItemEditText.text.clear()
+
+                    val inputManager =
+                        getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
+                    inputManager.hideSoftInputFromWindow(view.windowToken, 0)
                 }
             }
             false
