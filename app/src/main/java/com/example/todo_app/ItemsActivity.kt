@@ -15,6 +15,8 @@ class ItemsActivity : AppCompatActivity(), OnItemClickListener {
         super.onCreate(savedInstanceState)
         setBindings()
 
+
+
         var selectedIndex = intent.getIntExtra("groupIndex", 0)
         thisGroup = AppData.groups[selectedIndex]
         binding.toolbarTitle.text = thisGroup.name
@@ -26,6 +28,10 @@ class ItemsActivity : AppCompatActivity(), OnItemClickListener {
         setSupportActionBar(binding.toolbar)
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.setDisplayShowTitleEnabled(false)
+
+        binding.newItemEditText.setOnKeyListener { view, keyCode, event ->
+            false
+        }
     }
 
     override fun onSupportNavigateUp(): Boolean {
