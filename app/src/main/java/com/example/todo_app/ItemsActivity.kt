@@ -17,14 +17,14 @@ class ItemsActivity : AppCompatActivity() {
 
         binding.toolbarTitle.text = thisGroup.name
 
-        setSupportActionBar(binding.toolbar)
-        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
-        supportActionBar!!.setDisplayShowTitleEnabled(false)
-
         binding.itemsRecyclerView.layoutManager = LinearLayoutManager(this)
 
         var itemsAdapter = ItemsAdapter(thisGroup)
         binding.itemsRecyclerView.adapter = itemsAdapter
+
+        setSupportActionBar(binding.toolbar)
+        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+        supportActionBar!!.setDisplayShowTitleEnabled(false)
     }
 
     override fun onSupportNavigateUp(): Boolean {
