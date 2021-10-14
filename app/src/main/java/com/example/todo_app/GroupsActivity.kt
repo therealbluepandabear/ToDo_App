@@ -78,6 +78,7 @@ class GroupsActivity : AppCompatActivity(), OnGroupClickListener {
     }
 
     override fun groupLongClicked(index: Int) {
-
+        AppData.groups.removeAt(index)
+        groupsAdapter!!.notifyItemRemoved(index)
     }
 }
