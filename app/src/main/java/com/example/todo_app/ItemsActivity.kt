@@ -65,6 +65,7 @@ class ItemsActivity : AppCompatActivity(), OnItemClickListener {
     }
 
     override fun itemLongClicked(index: Int) {
-        TODO("Not yet implemented")
+        thisGroup.items.removeAt(index)
+        itemsAdapter!!.notifyItemRemoved(index)
     }
 }
