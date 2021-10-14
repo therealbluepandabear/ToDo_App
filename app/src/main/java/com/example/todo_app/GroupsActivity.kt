@@ -1,5 +1,6 @@
 package com.example.todo_app
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -30,6 +31,13 @@ class GroupsActivity : AppCompatActivity(), OnGroupClickListener {
         groupsAdapter = GroupsAdapter(AppData.groups, this)
         binding.groupsRecyclerView.adapter = groupsAdapter
     }
+
+    @SuppressLint("NotifyDataSetChanged") // SUPPRESSED FOR NOW UNTIL BETTER SOLUTION FOUND.
+    override fun onResume() {
+        super.onResume()
+        groupsAdapter!!.notifyDataSetChanged()
+    }
+
     private fun setBindings() {
         binding = GroupsBinding.inflate(layoutInflater)
         setContentView(binding.root)
