@@ -54,6 +54,11 @@ class ItemsActivity : AppCompatActivity(), OnItemClickListener {
         return true
     }
 
+    override fun finish() {
+        super.finish()
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
+    }
+
     private fun setBindings() {
         binding = ItemsBinding.inflate(layoutInflater)
         setContentView(binding.root)
